@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_UhZBQPGrEeWtIMLDeYZRSA" name="RootElement" URI="" viewpoint="">
-  <ownedComment xmi:type="uml:Comment" xmi:id="_C8B7wPJpEeWopulrJJ2QVA" annotatedElement="_8IhRwPHSEeWtIMLDeYZRSA _BViJMPHTEeWtIMLDeYZRSA">
-    <body>Adapter&#xD;
-Client strategy &lt;=> Broker's office</body>
-  </ownedComment>
-  <ownedComment xmi:type="uml:Comment" xmi:id="_jaxH4PJ9EeWopulrJJ2QVA" annotatedElement="_8IhRwPHSEeWtIMLDeYZRSA _BViJMPHTEeWtIMLDeYZRSA">
-    <body>Adapter&#xD;
-Client strategy &lt;=> Bank</body>
-  </ownedComment>
   <packagedElement xmi:type="uml:Class" xmi:id="_gIlG0PGrEeWtIMLDeYZRSA" name="Symulation">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_nTfV4PHNEeWtIMLDeYZRSA" name="timeSupervisor" visibility="private" type="_5-6WMPGsEeWtIMLDeYZRSA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_pn8r0PHNEeWtIMLDeYZRSA" value="1"/>
@@ -333,7 +325,7 @@ Client strategy &lt;=> Bank</body>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_fQsEMPJpEeWopulrJJ2QVA" name="broker" visibility="private" type="_BViJMPHTEeWtIMLDeYZRSA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_2kNd8PJ9EeWopulrJJ2QVA" name="bank" visibility="private" type="_Q6xXcPJ9EeWopulrJJ2QVA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Realization" xmi:id="_HB2WUPHUEeWtIMLDeYZRSA" client="_UhZBQPGrEeWtIMLDeYZRSA" supplier="_vtFiQPHGEeWtIMLDeYZRSA"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_HB2WUPHUEeWtIMLDeYZRSA" client="_UhZBQPGrEeWtIMLDeYZRSA" supplier="_UhZBQPGrEeWtIMLDeYZRSA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_ifq9YPHUEeWtIMLDeYZRSA" memberEnd="_ifrkcvHUEeWtIMLDeYZRSA _ifsLgPHUEeWtIMLDeYZRSA" navigableOwnedEnd="_ifrkcvHUEeWtIMLDeYZRSA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ifrkcPHUEeWtIMLDeYZRSA" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_ifrkcfHUEeWtIMLDeYZRSA" key="nature" value="UML_Nature"/>
@@ -789,9 +781,6 @@ Client strategy &lt;=> Bank</body>
     <ownedEnd xmi:type="uml:Property" xmi:id="_pzUP0fpIEeWZ16JFCZ3NlQ" name="symulation" type="_gIlG0PGrEeWtIMLDeYZRSA" association="_pzTBsPpIEeWZ16JFCZ3NlQ"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_pzUP0PpIEeWZ16JFCZ3NlQ" name="timesupervisor" type="_5-6WMPGsEeWtIMLDeYZRSA" association="_pzTBsPpIEeWZ16JFCZ3NlQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_T77QUPpJEeWZ16JFCZ3NlQ" name="PrepareData">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_WggF4PpJEeWZ16JFCZ3NlQ" name="createClients"/>
-  </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_OzuOIPpOEeWZ16JFCZ3NlQ" name="BuySellStocks">
     <ownedComment xmi:type="uml:Comment" xmi:id="_9iemcPpmEeWZ16JFCZ3NlQ">
       <body>Adapters</body>
@@ -803,7 +792,10 @@ Client strategy &lt;=> Bank</body>
       <body>Subservices</body>
     </ownedComment>
     <ownedComment xmi:type="uml:Comment" xmi:id="_jh-AwPr8EeWrYoVVOWxOug">
-      <body> Repositories</body>
+      <body>Repositories</body>
+    </ownedComment>
+    <ownedComment xmi:type="uml:Comment" xmi:id="_ubeiIPsWEeWP3dvSpSHfRQ">
+      <body>Add service, repo and entity/to to Transaction</body>
     </ownedComment>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_cmPi0PpOEeWZ16JFCZ3NlQ" name="" type="_gIlG0PGrEeWtIMLDeYZRSA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_d5laAPpOEeWZ16JFCZ3NlQ" name="" type="_69tWMPGrEeWtIMLDeYZRSA"/>

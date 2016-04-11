@@ -11,7 +11,6 @@
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_5KsjoPGvEeWtIMLDeYZRSA" name="Symulation"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_6-33APGvEeWtIMLDeYZRSA" name="startSymulation"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_nvd3UPG5EeWtIMLDeYZRSA" name="PrapareDatabase" visibility="private"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_69tWMPGrEeWtIMLDeYZRSA" name="Client">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_rDCmQPHMEeWtIMLDeYZRSA" name="id" visibility="private">
@@ -21,7 +20,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_xKImMPplEeWZ16JFCZ3NlQ" name="bankAccountId" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_4ydCcPplEeWZ16JFCZ3NlQ" name="brokerAccountId">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_4ydCcPplEeWZ16JFCZ3NlQ" name="brokerAccountId" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_xWrukPHMEeWtIMLDeYZRSA" name="Client">
@@ -31,22 +30,6 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_5VKSsPJpEeWopulrJJ2QVA" name="setStrategy"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ShsRgPpKEeWZ16JFCZ3NlQ" name="playStockMarket" visibility="public"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_CQV7MPpQEeWZ16JFCZ3NlQ" name="getStockQuotesOfLastDays" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_LEaY4PpQEeWZ16JFCZ3NlQ" type="_ncfR4PJyEeWopulrJJ2QVA" direction="return"/>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_dNnKMPphEeWZ16JFCZ3NlQ" name="numberOfDays">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_U3TPQPpQEeWZ16JFCZ3NlQ" name="getClientStocks" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_XjM00PpQEeWZ16JFCZ3NlQ" type="_dX-1IPJ0EeWopulrJJ2QVA" direction="return"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_cAKi0PplEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ls2qkPplEeWZ16JFCZ3NlQ" type="_ncfR4PJyEeWopulrJJ2QVA" direction="return"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_3H1I4PsDEeWrYoVVOWxOug" name="getActualyExchangeRate" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8l1CoPsDEeWrYoVVOWxOug" type="_ncfR4PJyEeWopulrJJ2QVA" direction="return"/>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_WWV5sPsMEeWrYoVVOWxOug" name="makeADecision" visibility="private"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_0u5hoPsOEeWP3dvSpSHfRQ" name="sellStock" visibility="private"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_2-dwgPsOEeWP3dvSpSHfRQ" name="buyStock" visibility="private"/>
   </packagedElement>
@@ -86,6 +69,9 @@
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_jucb4PsPEeWP3dvSpSHfRQ" name="clientSellStock"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_ysGuAPsPEeWP3dvSpSHfRQ" name="payToClienStocks" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_b9hHAPygEeWgyMW-EunB0g" name="getDataForBankTransfer">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_hsHokPygEeWgyMW-EunB0g" name="transaction" type="_Yp-boPJ5EeWopulrJJ2QVA"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_5-6WMPGsEeWtIMLDeYZRSA" name="TimeSupervisor">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Ej4jQPHNEeWtIMLDeYZRSA" name="firstDate" visibility="private">
@@ -233,7 +219,9 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_W--lkPHNEeWtIMLDeYZRSA" name="execute">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_Eqhi0PpJEeWZ16JFCZ3NlQ" name="proposedOffers" type="_Xp5esPJ5EeWopulrJJ2QVA" direction="return"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_-CIEsPsHEeWrYoVVOWxOug" name="generateOffer" visibility="private"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_UAinMPyREeWgyMW-EunB0g" name="generateOffer" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_XW6tIPyREeWgyMW-EunB0g" type="_Xp5esPJ5EeWopulrJJ2QVA" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_2Q_UIPHGEeWtIMLDeYZRSA" name="Random">
     <generalization xmi:type="uml:Generalization" xmi:id="_VVVCwPJzEeWopulrJJ2QVA" general="_2XIsgPHTEeWtIMLDeYZRSA"/>
@@ -249,7 +237,7 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_O3DD4PHHEeWtIMLDeYZRSA" name="LastTwoDays">
     <generalization xmi:type="uml:Generalization" xmi:id="_WWCR0PJzEeWopulrJJ2QVA" general="_2XIsgPHTEeWtIMLDeYZRSA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_zsr4MPJyEeWopulrJJ2QVA" name="getDifferenceStockQuotesBetweenLastTwoDays" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_yso7APJzEeWopulrJJ2QVA" type="_ncfR4PJyEeWopulrJJ2QVA" direction="return">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_yso7APJzEeWopulrJJ2QVA" type="_ItGekPHREeWtIMLDeYZRSA" direction="return">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5hujgPJzEeWopulrJJ2QVA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5hyN4PJzEeWopulrJJ2QVA" value="*"/>
       </ownedParameter>
@@ -258,9 +246,15 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_VUaI4PHHEeWtIMLDeYZRSA" name="AverageLastMonth">
     <generalization xmi:type="uml:Generalization" xmi:id="_jSv_4PJzEeWopulrJJ2QVA" general="_2XIsgPHTEeWtIMLDeYZRSA"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_JfNJUPJzEeWopulrJJ2QVA" name="getDifferenceStockQuotesBetweenAverageLastMonthAndActualy" visibility="private">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2u7rwPJzEeWopulrJJ2QVA" type="_ncfR4PJyEeWopulrJJ2QVA">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2u7rwPJzEeWopulrJJ2QVA" type="_ItGekPHREeWtIMLDeYZRSA" direction="return">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_3TtMwPJzEeWopulrJJ2QVA"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_3TwQEPJzEeWopulrJJ2QVA" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CQV7MPpQEeWZ16JFCZ3NlQ" name="getStockQuotesOfLastDays" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_LEaY4PpQEeWZ16JFCZ3NlQ" type="_ItGekPHREeWtIMLDeYZRSA" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_dNnKMPphEeWZ16JFCZ3NlQ" name="numberOfDays">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
@@ -304,26 +298,46 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_8IhRwPHSEeWtIMLDeYZRSA" name="BrokerImpl"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_BViJMPHTEeWtIMLDeYZRSA" name="Broker">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_sqW_UPpREeWZ16JFCZ3NlQ" name="getStockQuotesOfLastDays">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_0y-FMPpREeWZ16JFCZ3NlQ" name="numberOfDays">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7QOUIPpfEeWZ16JFCZ3NlQ" type="_ncfR4PJyEeWopulrJJ2QVA" direction="return"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_sqW_UPpREeWZ16JFCZ3NlQ" name="getActualyStockQuotes">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_7QOUIPpfEeWZ16JFCZ3NlQ" type="_ItGekPHREeWtIMLDeYZRSA" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_5hu6YPpREeWZ16JFCZ3NlQ" name="getClientStocks">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_8D6jQPpREeWZ16JFCZ3NlQ" name="id">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
       </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-e2zUPpfEeWZ16JFCZ3NlQ" type="_dX-1IPJ0EeWopulrJJ2QVA" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_-e2zUPpfEeWZ16JFCZ3NlQ" type="_tJpjoPJfEeWopulrJJ2QVA" direction="return"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_KKs4sPsLEeWrYoVVOWxOug" name="receiveProposedofferClient">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_KKs4sPsLEeWrYoVVOWxOug" name="getTransactionToClientOffer">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_OIrKIPsLEeWrYoVVOWxOug" name="offer" type="_Xp5esPJ5EeWopulrJJ2QVA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_EHjf0PySEeWgyMW-EunB0g" type="_Yp-boPJ5EeWopulrJJ2QVA" direction="return"/>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_-l7RIPsOEeWP3dvSpSHfRQ" name="clientSellStock"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_-l7RIPsOEeWP3dvSpSHfRQ" name="clientSellStock">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_TKLxgPySEeWgyMW-EunB0g" name="transaction" type="_Yp-boPJ5EeWopulrJJ2QVA"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_tL1CkPyfEeWgyMW-EunB0g" name="clientBuyStock">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_xVWcsPyfEeWgyMW-EunB0g" name="transaction" type="_Yp-boPJ5EeWopulrJJ2QVA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Dj4CoPygEeWgyMW-EunB0g" type="_442DUPyfEeWgyMW-EunB0g" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_2XIsgPHTEeWtIMLDeYZRSA" name="AbstractStrategy" isAbstract="true">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_fQsEMPJpEeWopulrJJ2QVA" name="broker" visibility="private" type="_BViJMPHTEeWtIMLDeYZRSA"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_2kNd8PJ9EeWopulrJJ2QVA" name="bank" visibility="private" type="_Q6xXcPJ9EeWopulrJJ2QVA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fQsEMPJpEeWopulrJJ2QVA" name="client" visibility="private" type="_69tWMPGrEeWtIMLDeYZRSA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_l47iEPyyEeWgyMW-EunB0g" name="bank" visibility="private" type="_Q6xXcPJ9EeWopulrJJ2QVA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_pNVSEPyyEeWgyMW-EunB0g" name="broker" visibility="private" type="_BViJMPHTEeWtIMLDeYZRSA"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_GTOagPwAEeW-7N9COpRtqw" name="getActualyStockQuotes" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_NxF6QPwAEeW-7N9COpRtqw" type="_ItGekPHREeWtIMLDeYZRSA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_U3TPQPpQEeWZ16JFCZ3NlQ" name="getClientStocks" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_XjM00PpQEeWZ16JFCZ3NlQ" type="_tJpjoPJfEeWopulrJJ2QVA" direction="return">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_eYwVMPyyEeWgyMW-EunB0g"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_eYw8QPyyEeWgyMW-EunB0g" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_cAKi0PplEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ls2qkPplEeWZ16JFCZ3NlQ" type="_zvt64PJuEeWopulrJJ2QVA" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3H1I4PsDEeWrYoVVOWxOug" name="getActualyExchangeRate" visibility="private">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_8l1CoPsDEeWrYoVVOWxOug" type="_Nnhk8PpHEeWZ16JFCZ3NlQ" direction="return"/>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Realization" xmi:id="_HB2WUPHUEeWtIMLDeYZRSA" client="_UhZBQPGrEeWtIMLDeYZRSA" supplier="_UhZBQPGrEeWtIMLDeYZRSA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_ifq9YPHUEeWtIMLDeYZRSA" memberEnd="_ifrkcvHUEeWtIMLDeYZRSA _ifsLgPHUEeWtIMLDeYZRSA" navigableOwnedEnd="_ifrkcvHUEeWtIMLDeYZRSA">
@@ -633,22 +647,6 @@
     </ownedEnd>
     <ownedEnd xmi:type="uml:Property" xmi:id="_-NZv0vJwEeWopulrJJ2QVA" name="clientcurrencymapper" type="_oQKccPJwEeWopulrJJ2QVA" association="_-NZIwPJwEeWopulrJJ2QVA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_ncfR4PJyEeWopulrJJ2QVA" name="Map&lt;String, Double>">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_QoYWAPJ0EeWopulrJJ2QVA" name="companyName">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Xk4OEPJ0EeWopulrJJ2QVA" name="valueOfStock">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-    </ownedAttribute>
-  </packagedElement>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_dX-1IPJ0EeWopulrJJ2QVA" name="Map&lt;String, Integer>">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_dX-1IfJ0EeWopulrJJ2QVA" name="companyName">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_dX-1IvJ0EeWopulrJJ2QVA" name="numberOfStock">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-  </packagedElement>
   <packagedElement xmi:type="uml:DataType" xmi:id="_5sN_cPJ3EeWopulrJJ2QVA" name="Offer">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_IJW-cPJ4EeWopulrJJ2QVA" name="offerType" visibility="private" type="_AgHVIPJ4EeWopulrJJ2QVA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_XUiIIPJ4EeWopulrJJ2QVA" name="companyName" visibility="private">
@@ -662,10 +660,10 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_DWMxcPJ4EeWopulrJJ2QVA" name="BUY"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_EP2WQPJ4EeWopulrJJ2QVA" name="SELL"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_Xp5esPJ5EeWopulrJJ2QVA" name="ClientOffer">
+  <packagedElement xmi:type="uml:DataType" xmi:id="_Xp5esPJ5EeWopulrJJ2QVA" name="ProposeOffer">
     <generalization xmi:type="uml:Generalization" xmi:id="_da7pMPJ5EeWopulrJJ2QVA" general="_5sN_cPJ3EeWopulrJJ2QVA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:DataType" xmi:id="_Yp-boPJ5EeWopulrJJ2QVA" name="BrokerOffer">
+  <packagedElement xmi:type="uml:DataType" xmi:id="_Yp-boPJ5EeWopulrJJ2QVA" name="Transaction">
     <generalization xmi:type="uml:Generalization" xmi:id="_c748wPJ5EeWopulrJJ2QVA" general="_5sN_cPJ3EeWopulrJJ2QVA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_Yp-bo_J5EeWopulrJJ2QVA" name="valueOfStock" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
@@ -679,19 +677,14 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_vpX-EPplEeWZ16JFCZ3NlQ" name="accountId">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_u2hIUPpmEeWZ16JFCZ3NlQ" type="_ncfR4PJyEeWopulrJJ2QVA" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_u2hIUPpmEeWZ16JFCZ3NlQ" type="_zvt64PJuEeWopulrJJ2QVA" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_cfTVoPsEEeWrYoVVOWxOug" name="getActualyExchangeRate">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_gpnZ8PsEEeWrYoVVOWxOug" type="_ncfR4PJyEeWopulrJJ2QVA" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_gpnZ8PsEEeWrYoVVOWxOug" type="_Nnhk8PpHEeWZ16JFCZ3NlQ" direction="return"/>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_gmoEcPsREeWP3dvSpSHfRQ" name="makeBankTransfer">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_lkzOoPsREeWP3dvSpSHfRQ" name="accountId">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oVi38PsREeWP3dvSpSHfRQ" name="value">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#double"/>
-      </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_qviOIPsREeWP3dvSpSHfRQ" type="_g8lUkPKFEeWopulrJJ2QVA" direction="return"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3joHYPygEeWgyMW-EunB0g" name="data" type="_442DUPyfEeWgyMW-EunB0g"/>
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_YnNesPJ9EeWopulrJJ2QVA" name="BankAdapterImpl"/>
@@ -781,7 +774,7 @@
     <ownedEnd xmi:type="uml:Property" xmi:id="_pzUP0fpIEeWZ16JFCZ3NlQ" name="symulation" type="_gIlG0PGrEeWtIMLDeYZRSA" association="_pzTBsPpIEeWZ16JFCZ3NlQ"/>
     <ownedEnd xmi:type="uml:Property" xmi:id="_pzUP0PpIEeWZ16JFCZ3NlQ" name="timesupervisor" type="_5-6WMPGsEeWtIMLDeYZRSA" association="_pzTBsPpIEeWZ16JFCZ3NlQ"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interaction" xmi:id="_OzuOIPpOEeWZ16JFCZ3NlQ" name="BuySellStocks">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_OzuOIPpOEeWZ16JFCZ3NlQ" name="SellStocks">
     <ownedComment xmi:type="uml:Comment" xmi:id="_9iemcPpmEeWZ16JFCZ3NlQ">
       <body>Adapters</body>
     </ownedComment>
@@ -795,7 +788,7 @@
       <body>Repositories</body>
     </ownedComment>
     <ownedComment xmi:type="uml:Comment" xmi:id="_ubeiIPsWEeWP3dvSpSHfRQ">
-      <body>Add service, repo and entity/to to Transaction</body>
+      <body>Add service, repo and entity to Transaction</body>
     </ownedComment>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_cmPi0PpOEeWZ16JFCZ3NlQ" name="" type="_gIlG0PGrEeWtIMLDeYZRSA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_d5laAPpOEeWZ16JFCZ3NlQ" name="" type="_69tWMPGrEeWtIMLDeYZRSA"/>
@@ -812,197 +805,207 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_ncR6MPr8EeWrYoVVOWxOug" name="" type="_HdB8oPG3EeWtIMLDeYZRSA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_qX7zAPr8EeWrYoVVOWxOug" name="" type="_J3eW0PJcEeWopulrJJ2QVA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_w94r8Pr_EeWrYoVVOWxOug" name="" type="_4PiKEPr-EeWrYoVVOWxOug"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_d5ky8PpOEeWZ16JFCZ3NlQ" name="" represents="_d5laAPpOEeWZ16JFCZ3NlQ" coveredBy="_jTfVkPpcEeWZ16JFCZ3NlQ _pQbOEfpcEeWZ16JFCZ3NlQ _xhVUUPpcEeWZ16JFCZ3NlQ _3YYnQfpcEeWZ16JFCZ3NlQ _B2ioMPpdEeWZ16JFCZ3NlQ _PEIq4PpdEeWZ16JFCZ3NlQ _yRqvoPpdEeWZ16JFCZ3NlQ _6hmlgfpdEeWZ16JFCZ3NlQ _6hmlgPpdEeWZ16JFCZ3NlQ _MUnUIPpeEeWZ16JFCZ3NlQ _VmlOwfpeEeWZ16JFCZ3NlQ _hdytUPpeEeWZ16JFCZ3NlQ _wbLSoPpeEeWZ16JFCZ3NlQ _5gAJIPpeEeWZ16JFCZ3NlQ _Ht2gMPplEeWZ16JFCZ3NlQ _GQSgkfpmEeWZ16JFCZ3NlQ _fdMN4PpmEeWZ16JFCZ3NlQ _lG0v4fpmEeWZ16JFCZ3NlQ _oBo7MfpmEeWZ16JFCZ3NlQ _t0LzQPsDEeWrYoVVOWxOug _UaWAsPsEEeWrYoVVOWxOug _uqWw0PsEEeWrYoVVOWxOug _bCSvoPsFEeWrYoVVOWxOug _duda8PsFEeWrYoVVOWxOug _IA-6gPsIEeWrYoVVOWxOug _IA-TcPsIEeWrYoVVOWxOug _L6Dd0PsIEeWrYoVVOWxOug _SjbeMPsLEeWrYoVVOWxOug __PmnoPsLEeWrYoVVOWxOug _f4wrIPsMEeWrYoVVOWxOug _f4x5QPsMEeWrYoVVOWxOug _JbDAkPsPEeWP3dvSpSHfRQ _JDZYwPsTEeWP3dvSpSHfRQ _wmNbsPsTEeWP3dvSpSHfRQ _wIkoAPsUEeWP3dvSpSHfRQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_rNfgEPpOEeWZ16JFCZ3NlQ" name="" represents="_rNgHIPpOEeWZ16JFCZ3NlQ" coveredBy="_qBT4cPpcEeWZ16JFCZ3NlQ _xhV7YPpcEeWZ16JFCZ3NlQ _3YYnQPpcEeWZ16JFCZ3NlQ _yRrWsPpdEeWZ16JFCZ3NlQ _VmlOwPpeEeWZ16JFCZ3NlQ _5gAJIfpeEeWZ16JFCZ3NlQ _GQSgkPpmEeWZ16JFCZ3NlQ _oBpiQPpmEeWZ16JFCZ3NlQ _UaUykPsEEeWrYoVVOWxOug _duda8fsFEeWrYoVVOWxOug _Dp928PsIEeWrYoVVOWxOug _Dp-eAPsIEeWrYoVVOWxOug _L6C2wPsIEeWrYoVVOWxOug"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_cHR5cPpPEeWZ16JFCZ3NlQ" name="" represents="_cHSggPpPEeWZ16JFCZ3NlQ" coveredBy="_7BDXEPpcEeWZ16JFCZ3NlQ _B2ioMfpdEeWZ16JFCZ3NlQ _PEID0PpdEeWZ16JFCZ3NlQ _fVN3QPpeEeWZ16JFCZ3NlQ _hdzUYPpeEeWZ16JFCZ3NlQ _wbKrkfpeEeWZ16JFCZ3NlQ _dPzNcPpfEeWZ16JFCZ3NlQ _hUdVsPpfEeWZ16JFCZ3NlQ _otEiAPpfEeWZ16JFCZ3NlQ _wfac8PpfEeWZ16JFCZ3NlQ _3DisgPsIEeWrYoVVOWxOug _SjcFQPsLEeWrYoVVOWxOug _6nDvMPsLEeWrYoVVOWxOug _8zH-IPsLEeWrYoVVOWxOug _neJdQPsOEeWP3dvSpSHfRQ _JbEOsPsPEeWP3dvSpSHfRQ __0aoEPsPEeWP3dvSpSHfRQ _BrsycPsTEeWP3dvSpSHfRQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_IDYTAPpfEeWZ16JFCZ3NlQ" name="" represents="_IDZhIPpfEeWZ16JFCZ3NlQ" coveredBy="_PoV5QPpfEeWZ16JFCZ3NlQ _dPz0gPpfEeWZ16JFCZ3NlQ _hUcuoPpfEeWZ16JFCZ3NlQ _kbsMYPpfEeWZ16JFCZ3NlQ _otEiAfpfEeWZ16JFCZ3NlQ _wfZ14PpfEeWZ16JFCZ3NlQ _RzVJ4Pr-EeWrYoVVOWxOug _bds9cPr-EeWrYoVVOWxOug _H265MPsAEeWrYoVVOWxOug _MCoEoPsAEeWrYoVVOWxOug _4wOwcPsLEeWrYoVVOWxOug _6nEWQPsLEeWrYoVVOWxOug _8zHXEPsLEeWrYoVVOWxOug _qaJUUPsOEeWP3dvSpSHfRQ __0bPIPsPEeWP3dvSpSHfRQ _Gy9ukPsQEeWP3dvSpSHfRQ _i-QfoPsQEeWP3dvSpSHfRQ _tnMNMPsQEeWP3dvSpSHfRQ _yIcVYPsREeWP3dvSpSHfRQ _7UAQkPsSEeWP3dvSpSHfRQ _BrsLYPsTEeWP3dvSpSHfRQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_U7BhkPpkEeWZ16JFCZ3NlQ" name="" represents="_U7CIoPpkEeWZ16JFCZ3NlQ" coveredBy="_JP8IkPpmEeWZ16JFCZ3NlQ _fdMN4fpmEeWZ16JFCZ3NlQ _lG0v4PpmEeWZ16JFCZ3NlQ _R1YQ8PsBEeWrYoVVOWxOug _USaUEfsBEeWrYoVVOWxOug _X8wXgPsEEeWrYoVVOWxOug _uqX-8PsEEeWrYoVVOWxOug _Tv6HIPsFEeWrYoVVOWxOug _W7tUwPsFEeWrYoVVOWxOug _79-FgPsQEeWP3dvSpSHfRQ _yIc8cPsREeWP3dvSpSHfRQ _YZa9APsSEeWP3dvSpSHfRQ _vzn9oPsSEeWP3dvSpSHfRQ _7T_pgPsSEeWP3dvSpSHfRQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_WgrQwPpkEeWZ16JFCZ3NlQ" name="" represents="_Wgr30PpkEeWZ16JFCZ3NlQ" coveredBy="_5petoPsAEeWrYoVVOWxOug _R1YQ8fsBEeWrYoVVOWxOug _USaUEPsBEeWrYoVVOWxOug _92N-YPsBEeWrYoVVOWxOug _ZQHuwPsCEeWrYoVVOWxOug _12DigPsEEeWrYoVVOWxOug _Tv6uMPsFEeWrYoVVOWxOug _W7stsPsFEeWrYoVVOWxOug _vLW6MPsGEeWrYoVVOWxOug _zIKuAPsGEeWrYoVVOWxOug _BynIMPsSEeWP3dvSpSHfRQ _YZa9AfsSEeWP3dvSpSHfRQ _aHlvAPsSEeWP3dvSpSHfRQ _mNDE8PsSEeWP3dvSpSHfRQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_19RT4Pr7EeWrYoVVOWxOug" name="" represents="_19WzcPr7EeWrYoVVOWxOug" coveredBy="_eMwdUPsBEeWrYoVVOWxOug _92OlcPsBEeWrYoVVOWxOug _ZQHHsPsCEeWrYoVVOWxOug _T_cC0PsDEeWrYoVVOWxOug _T_SR0PsDEeWrYoVVOWxOug _5H1wcPsREeWP3dvSpSHfRQ _aHlvAfsSEeWP3dvSpSHfRQ _pan0MPsSEeWP3dvSpSHfRQ _kSF0IPsSEeWP3dvSpSHfRQ _mNCd4PsSEeWP3dvSpSHfRQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_z-Zi0PwAEeW-7N9COpRtqw" name="" type="_2Q_UIPHGEeWtIMLDeYZRSA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_d5ky8PpOEeWZ16JFCZ3NlQ" name="" represents="_d5laAPpOEeWZ16JFCZ3NlQ" coveredBy="_xhVUUPpcEeWZ16JFCZ3NlQ _6hmlgfpdEeWZ16JFCZ3NlQ _6hmlgPpdEeWZ16JFCZ3NlQ _IA-TcPsIEeWrYoVVOWxOug _L6Dd0PsIEeWrYoVVOWxOug _f4wrIPsMEeWrYoVVOWxOug _f4x5QPsMEeWrYoVVOWxOug _JbDAkPsPEeWP3dvSpSHfRQ _JDZYwPsTEeWP3dvSpSHfRQ _wmNbsPsTEeWP3dvSpSHfRQ _wIkoAPsUEeWP3dvSpSHfRQ _FQ17APwBEeW-7N9COpRtqw _pQbOEfpcEeWZ16JFCZ3NlQ _Gba3gPygEeWgyMW-EunB0g _uui9EPygEeWgyMW-EunB0g _9khS0PygEeWgyMW-EunB0g _0rbVwPyhEeWgyMW-EunB0g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_rNfgEPpOEeWZ16JFCZ3NlQ" name="" represents="_rNgHIPpOEeWZ16JFCZ3NlQ" coveredBy="_qBT4cPpcEeWZ16JFCZ3NlQ _xhV7YPpcEeWZ16JFCZ3NlQ _VmlOwPpeEeWZ16JFCZ3NlQ _5gAJIfpeEeWZ16JFCZ3NlQ _GQSgkPpmEeWZ16JFCZ3NlQ _duda8fsFEeWrYoVVOWxOug _Dp928PsIEeWrYoVVOWxOug _Dp-eAPsIEeWrYoVVOWxOug _L6C2wPsIEeWrYoVVOWxOug _B2ioMPpdEeWZ16JFCZ3NlQ _PEIq4PpdEeWZ16JFCZ3NlQ _hdytUPpeEeWZ16JFCZ3NlQ _wbLSoPpeEeWZ16JFCZ3NlQ _fdMN4PpmEeWZ16JFCZ3NlQ _lG0v4fpmEeWZ16JFCZ3NlQ _uqWw0PsEEeWrYoVVOWxOug _bCSvoPsFEeWrYoVVOWxOug __Lpb8PyQEeWgyMW-EunB0g __LqDAPyQEeWgyMW-EunB0g _SjbeMPsLEeWrYoVVOWxOug __PmnoPsLEeWrYoVVOWxOug"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_cHR5cPpPEeWZ16JFCZ3NlQ" name="" represents="_cHSggPpPEeWZ16JFCZ3NlQ" coveredBy="_7BDXEPpcEeWZ16JFCZ3NlQ _B2ioMfpdEeWZ16JFCZ3NlQ _PEID0PpdEeWZ16JFCZ3NlQ _fVN3QPpeEeWZ16JFCZ3NlQ _hdzUYPpeEeWZ16JFCZ3NlQ _wbKrkfpeEeWZ16JFCZ3NlQ _dPzNcPpfEeWZ16JFCZ3NlQ _hUdVsPpfEeWZ16JFCZ3NlQ _otEiAPpfEeWZ16JFCZ3NlQ _wfac8PpfEeWZ16JFCZ3NlQ _3DisgPsIEeWrYoVVOWxOug _SjcFQPsLEeWrYoVVOWxOug _6nDvMPsLEeWrYoVVOWxOug _8zH-IPsLEeWrYoVVOWxOug _neJdQPsOEeWP3dvSpSHfRQ _JbEOsPsPEeWP3dvSpSHfRQ __0aoEPsPEeWP3dvSpSHfRQ _BrsycPsTEeWP3dvSpSHfRQ _gPvmoPyfEeWgyMW-EunB0g _GbcssPygEeWgyMW-EunB0g _SU3f0PyiEeWgyMW-EunB0g _oKh2cPygEeWgyMW-EunB0g _uuiWAPygEeWgyMW-EunB0g _bPWHgPyiEeWgyMW-EunB0g _bPXVoPyiEeWgyMW-EunB0g _bPWukPyiEeWgyMW-EunB0g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_IDYTAPpfEeWZ16JFCZ3NlQ" name="" represents="_IDZhIPpfEeWZ16JFCZ3NlQ" coveredBy="_PoV5QPpfEeWZ16JFCZ3NlQ _dPz0gPpfEeWZ16JFCZ3NlQ _hUcuoPpfEeWZ16JFCZ3NlQ _kbsMYPpfEeWZ16JFCZ3NlQ _otEiAfpfEeWZ16JFCZ3NlQ _wfZ14PpfEeWZ16JFCZ3NlQ _RzVJ4Pr-EeWrYoVVOWxOug _bds9cPr-EeWrYoVVOWxOug _H265MPsAEeWrYoVVOWxOug _MCoEoPsAEeWrYoVVOWxOug _4wOwcPsLEeWrYoVVOWxOug _6nEWQPsLEeWrYoVVOWxOug _8zHXEPsLEeWrYoVVOWxOug _qaJUUPsOEeWP3dvSpSHfRQ __0bPIPsPEeWP3dvSpSHfRQ _Gy9ukPsQEeWP3dvSpSHfRQ _i-QfoPsQEeWP3dvSpSHfRQ _tnMNMPsQEeWP3dvSpSHfRQ _yIcVYPsREeWP3dvSpSHfRQ _7UAQkPsSEeWP3dvSpSHfRQ _BrsLYPsTEeWP3dvSpSHfRQ _KQo1kPygEeWgyMW-EunB0g _lw1bMPygEeWgyMW-EunB0g _oKgoUPygEeWgyMW-EunB0g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_U7BhkPpkEeWZ16JFCZ3NlQ" name="" represents="_U7CIoPpkEeWZ16JFCZ3NlQ" coveredBy="_JP8IkPpmEeWZ16JFCZ3NlQ _fdMN4fpmEeWZ16JFCZ3NlQ _lG0v4PpmEeWZ16JFCZ3NlQ _R1YQ8PsBEeWrYoVVOWxOug _USaUEfsBEeWrYoVVOWxOug _X8wXgPsEEeWrYoVVOWxOug _uqX-8PsEEeWrYoVVOWxOug _Tv6HIPsFEeWrYoVVOWxOug _W7tUwPsFEeWrYoVVOWxOug _79-FgPsQEeWP3dvSpSHfRQ _yIc8cPsREeWP3dvSpSHfRQ _YZa9APsSEeWP3dvSpSHfRQ _vzn9oPsSEeWP3dvSpSHfRQ _7T_pgPsSEeWP3dvSpSHfRQ _INYZ0fyfEeWgyMW-EunB0g _9kh54PygEeWgyMW-EunB0g _0rausPyhEeWgyMW-EunB0g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_WgrQwPpkEeWZ16JFCZ3NlQ" name="" represents="_Wgr30PpkEeWZ16JFCZ3NlQ" coveredBy="_5petoPsAEeWrYoVVOWxOug _R1YQ8fsBEeWrYoVVOWxOug _USaUEPsBEeWrYoVVOWxOug _92N-YPsBEeWrYoVVOWxOug _ZQHuwPsCEeWrYoVVOWxOug _12DigPsEEeWrYoVVOWxOug _Tv6uMPsFEeWrYoVVOWxOug _W7stsPsFEeWrYoVVOWxOug _vLW6MPsGEeWrYoVVOWxOug _zIKuAPsGEeWrYoVVOWxOug _BynIMPsSEeWP3dvSpSHfRQ _YZa9AfsSEeWP3dvSpSHfRQ _aHlvAPsSEeWP3dvSpSHfRQ _mNDE8PsSEeWP3dvSpSHfRQ _USv-QPyhEeWgyMW-EunB0g _xEuU0PyhEeWgyMW-EunB0g _23yfoPyhEeWgyMW-EunB0g"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_19RT4Pr7EeWrYoVVOWxOug" name="" represents="_19WzcPr7EeWrYoVVOWxOug" coveredBy="_eMwdUPsBEeWrYoVVOWxOug _92OlcPsBEeWrYoVVOWxOug _ZQHHsPsCEeWrYoVVOWxOug _T_cC0PsDEeWrYoVVOWxOug _T_SR0PsDEeWrYoVVOWxOug _5H1wcPsREeWP3dvSpSHfRQ _aHlvAfsSEeWP3dvSpSHfRQ _pan0MPsSEeWP3dvSpSHfRQ _kSF0IPsSEeWP3dvSpSHfRQ _mNCd4PsSEeWP3dvSpSHfRQ _g3w-APyhEeWgyMW-EunB0g _FQK6cPyiEeWgyMW-EunB0g _H9UdMPyiEeWgyMW-EunB0g"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_6wHX0Pr7EeWrYoVVOWxOug" name="" represents="_6wH-4Pr7EeWrYoVVOWxOug" coveredBy="_pBPWwPsFEeWrYoVVOWxOug _vLXhQPsGEeWrYoVVOWxOug _zIKG8PsGEeWrYoVVOWxOug _2FuEQPsGEeWrYoVVOWxOug _5wtvUPsGEeWrYoVVOWxOug"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_Nry-sPr8EeWrYoVVOWxOug" name="" represents="_NrzlwPr8EeWrYoVVOWxOug" coveredBy="_FC0Z4PsAEeWrYoVVOWxOug _H27gQPsAEeWrYoVVOWxOug _MCorsPsAEeWrYoVVOWxOug"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_WNAx0Pr8EeWrYoVVOWxOug" name="" represents="_WNBY4Pr8EeWrYoVVOWxOug" coveredBy="_w4umgPr8EeWrYoVVOWxOug _RzW_EPr-EeWrYoVVOWxOug _bdtkgPr-EeWrYoVVOWxOug _C3D5sPsQEeWP3dvSpSHfRQ _Gy-VoPsQEeWP3dvSpSHfRQ _i-QfofsQEeWP3dvSpSHfRQ _DHjP8PsUEeWP3dvSpSHfRQ _rv6igPsQEeWP3dvSpSHfRQ _DHyggPsUEeWP3dvSpSHfRQ"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_dqkvkPr8EeWrYoVVOWxOug" name="" represents="_dqlWoPr8EeWrYoVVOWxOug" coveredBy="_tqTJYPsBEeWrYoVVOWxOug _pnzH0PsCEeWrYoVVOWxOug _tN9WMPsCEeWrYoVVOWxOug _dVXSkPsSEeWP3dvSpSHfRQ _hmTjUPsSEeWP3dvSpSHfRQ _kSD-8PsSEeWP3dvSpSHfRQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_dqkvkPr8EeWrYoVVOWxOug" name="" represents="_dqlWoPr8EeWrYoVVOWxOug" coveredBy="_tqTJYPsBEeWrYoVVOWxOug _pnzH0PsCEeWrYoVVOWxOug _tN9WMPsCEeWrYoVVOWxOug _dVXSkPsSEeWP3dvSpSHfRQ _hmTjUPsSEeWP3dvSpSHfRQ _kSD-8PsSEeWP3dvSpSHfRQ _8DtK4PyhEeWgyMW-EunB0g _LhOo0PyiEeWgyMW-EunB0g _NPQ38PyiEeWgyMW-EunB0g"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_ncRTIPr8EeWrYoVVOWxOug" name="" represents="_ncR6MPr8EeWrYoVVOWxOug" coveredBy="_OH_OoPsAEeWrYoVVOWxOug _P2uBUPsAEeWrYoVVOWxOug _Tsn74PsAEeWrYoVVOWxOug"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_qX7L8Pr8EeWrYoVVOWxOug" name="" represents="_qX7zAPr8EeWrYoVVOWxOug" coveredBy="_g6GUsPr-EeWrYoVVOWxOug _pznTEPr-EeWrYoVVOWxOug _sXmSwPr-EeWrYoVVOWxOug _gGclAPsQEeWP3dvSpSHfRQ _m4HGEPsQEeWP3dvSpSHfRQ _rv5UYPsQEeWP3dvSpSHfRQ"/>
     <lifeline xmi:type="uml:Lifeline" xmi:id="_w92PsPr_EeWrYoVVOWxOug" name="" represents="_w94r8Pr_EeWrYoVVOWxOug" coveredBy="_teaQMPsGEeWrYoVVOWxOug _2Fv5cPsGEeWrYoVVOWxOug _5wuWYPsGEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_6hmlgPpdEeWZ16JFCZ3NlQ" name="Client0" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" finish="_6hmlgfpdEeWZ16JFCZ3NlQ" start="_pQbOEfpcEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3YYnQfpcEeWZ16JFCZ3NlQ" name="getClientStocks_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_3YXZIPpcEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dPzNcPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_MessageSend" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_dPymYPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_PoV5QPpfEeWZ16JFCZ3NlQ" name="BrokersOffice0" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_hUcuoPpfEeWZ16JFCZ3NlQ" start="_dPz0gPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_RzVJ4Pr-EeWrYoVVOWxOug" name="getStocksByClientId_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_RzPDQPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_g6GUsPr-EeWrYoVVOWxOug" name="ClientStockRepo0" covered="_qX7L8Pr8EeWrYoVVOWxOug" finish="_sXmSwPr-EeWrYoVVOWxOug" start="_pznTEPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_RzW_EPr-EeWrYoVVOWxOug" name="getStocksByClientId_MessageRecv" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_RzPDQPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PEID0PpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message1Send" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_PEG1sPpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PEIq4PpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message1Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_PEG1sPpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VmlOwfpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_VmknsPpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_otEiAPpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_MessageSend" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_otCFwPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_kbsMYPpfEeWZ16JFCZ3NlQ" name="BrokersOffice1" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_wfZ14PpfEeWZ16JFCZ3NlQ" start="_otEiAfpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hdzUYPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_MessageRecv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_hdxfMPpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_otEiAfpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_MessageRecv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_otCFwPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wbKrkfpeEeWZ16JFCZ3NlQ" name="getStockQuotes_Message0Send" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_wbKrkPpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_Ht2gMPplEeWZ16JFCZ3NlQ" name="Client3" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" start="_GQSgkfpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GQSgkfpmEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_GQQEUPpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fdMN4PpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_fdLm0PpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_JP8IkPpmEeWZ16JFCZ3NlQ" name="BankAdapter0" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" finish="_USaUEfsBEeWrYoVVOWxOug" start="_fdMN4fpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_R1YQ8fsBEeWrYoVVOWxOug" name="getAvailableFoundsByAccountId_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_R1WbwPsBEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_T_cC0PsDEeWrYoVVOWxOug" name="findAllById_MessageSend" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_pnx5sPsCEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_tqTJYPsBEeWrYoVVOWxOug" name="ClientAccountFundsRepo0" covered="_dqkvkPr8EeWrYoVVOWxOug" finish="_tN9WMPsCEeWrYoVVOWxOug" start="_pnzH0PsCEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vLW6MPsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message3Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_vLVFAPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_pBPWwPsFEeWrYoVVOWxOug" name="ExchangeRateService0" covered="_6wHX0Pr7EeWrYoVVOWxOug" finish="_zIKG8PsGEeWrYoVVOWxOug" start="_vLXhQPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vLXhQPsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message3Recv" covered="_6wHX0Pr7EeWrYoVVOWxOug" message="_vLVFAPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_W7tUwPsFEeWrYoVVOWxOug" name="getExchangeRate_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_bCSIkPsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bCSvoPsFEeWrYoVVOWxOug" name="getActualyExchangeRate_Message1Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_bCSIkPsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_duda8PsFEeWrYoVVOWxOug" name="getActualyExchangeRate_Message2Send" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_ducM0PsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Dp-eAPsIEeWrYoVVOWxOug" name="generateOffer_MessageRecv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_Dp8BwPsIEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6nEWQPsLEeWrYoVVOWxOug" name="responseToClientOffer_MessageRecv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_6nChEPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f4x5QPsMEeWrYoVVOWxOug" name="makeADecision_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_f4tAwPsMEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i-QfofsQEeWP3dvSpSHfRQ" name="update_MessageRecv" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_i-PRgPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_rv6igPsQEeWP3dvSpSHfRQ" name="update_Message1Recv" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_rv24IPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aHlvAPsSEeWP3dvSpSHfRQ" name="update_Message3Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_aHkg4PsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kSD-8PsSEeWP3dvSpSHfRQ" name="update_Message5Send" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_kSCJwPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mNCd4PsSEeWP3dvSpSHfRQ" name="update_Message6Send" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_mNBPwPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gy9ukPsQEeWP3dvSpSHfRQ" name="save_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pQbOEfpcEeWZ16JFCZ3NlQ" name="playStockMarket_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xhVUUPpcEeWZ16JFCZ3NlQ" name="execute_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_xhTfIPpcEeWZ16JFCZ3NlQ"/>
     <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_qBT4cPpcEeWZ16JFCZ3NlQ" name="StrategyAction" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" finish="_L6C2wPsIEeWrYoVVOWxOug" start="_xhV7YPpcEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xhV7YPpcEeWZ16JFCZ3NlQ" name="execute_MessageRecv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_xhTfIPpcEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_6hmlgfpdEeWZ16JFCZ3NlQ" name="Client0Finish" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" execution="_6hmlgPpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3YYnQPpcEeWZ16JFCZ3NlQ" name="getClientStocks_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_3YXZIPpcEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_jTfVkPpcEeWZ16JFCZ3NlQ" name="Client1" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" finish="_yRqvoPpdEeWZ16JFCZ3NlQ" start="_3YYnQfpcEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B2ioMPpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message0Send" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_B2iBIPpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dPz0gPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_MessageRecv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_dPymYPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_w4umgPr8EeWrYoVVOWxOug" name="ClientStockService0" covered="_WNAx0Pr8EeWrYoVVOWxOug" finish="_bdtkgPr-EeWrYoVVOWxOug" start="_RzW_EPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hUcuoPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_Message0Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_hUcHkPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_sXmSwPr-EeWrYoVVOWxOug" name="findAllByClientId_Message0Send" covered="_qX7L8Pr8EeWrYoVVOWxOug" message="_sXlEoPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bdtkgPr-EeWrYoVVOWxOug" name="getStocksByClientId_Message0Send" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_bdrIQPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yRrWsPpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message2Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_yRqIkPpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_MUnUIPpeEeWZ16JFCZ3NlQ" name="Client2" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" finish="_5gAJIPpeEeWZ16JFCZ3NlQ" start="_VmlOwfpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hdytUPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_hdxfMPpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_OH_OoPsAEeWrYoVVOWxOug" name="StockQuotesRepo0" covered="_ncRTIPr8EeWrYoVVOWxOug" finish="_Tsn74PsAEeWrYoVVOWxOug" start="_P2uBUPsAEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_H27gQPsAEeWrYoVVOWxOug" name="getStockQuotesByDateRange_MessageRecv" covered="_Nry-sPr8EeWrYoVVOWxOug" message="_H26SIPsAEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Tsn74PsAEeWrYoVVOWxOug" name="findAllByDateRange_Message0Send" covered="_ncRTIPr8EeWrYoVVOWxOug" message="_TsmtwPsAEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wfZ14PpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_Message0Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_wfYnwPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wfac8PpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_wfYnwPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5gAJIfpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_Message0Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_5f_iEPpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_92N-YPsBEeWrYoVVOWxOug" name="findAllByAcountId_MessageSend" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_92LiIPsBEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_5petoPsAEeWrYoVVOWxOug" name="Bank0" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" finish="_USaUEPsBEeWrYoVVOWxOug" start="_R1YQ8fsBEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnzH0PsCEeWrYoVVOWxOug" name="findAllById_MessageRecv" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_pnx5sPsCEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_USaUEfsBEeWrYoVVOWxOug" name="getAvailableFoundsByAccountId_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_USZtAPsBEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lG0v4fpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_Message0Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_lG0I0PpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZQHuwPsCEeWrYoVVOWxOug" name="getAllByAcountId_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_ZQFSgPsCEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_t0LzQPsDEeWrYoVVOWxOug" name="Client4" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" finish="_duda8PsFEeWrYoVVOWxOug" start="_UaWAsPsEEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_12DigPsEEeWrYoVVOWxOug" name="Bank1" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" finish="_W7stsPsFEeWrYoVVOWxOug" start="_Tv6uMPsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uqX-8PsEEeWrYoVVOWxOug" name="getActualyExchangeRate_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_uqUUkPsEEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Tv6uMPsFEeWrYoVVOWxOug" name="getExchangeRate_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_Tv2cwPsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_7BDXEPpcEeWZ16JFCZ3NlQ" name="Broker0" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_hUdVsPpfEeWZ16JFCZ3NlQ" start="_B2ioMfpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5wuWYPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_Message0Send" covered="_w92PsPr_EeWrYoVVOWxOug" message="_5wshMPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_duda8fsFEeWrYoVVOWxOug" name="getActualyExchangeRate_Message2Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_ducM0PsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_W7stsPsFEeWrYoVVOWxOug" name="getExchangeRate_Message0Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_W7q4gPsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B2ioMfpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_B2iBIPpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_L6C2wPsIEeWrYoVVOWxOug" name="execute_Message0Send" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_L6BBkPsIEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6nDvMPsLEeWrYoVVOWxOug" name="responseToClientOffer_MessageSend" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_6nChEPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SjbeMPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_SjZpAPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_3DisgPsIEeWrYoVVOWxOug" name="Broker2" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_8zH-IPsLEeWrYoVVOWxOug" start="_SjcFQPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SjcFQPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_MessageRecv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_SjZpAPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8zH-IPsLEeWrYoVVOWxOug" name="responseToClientOffer_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="__PlZgPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Dp928PsIEeWrYoVVOWxOug" name="generateOffer_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_Dp8BwPsIEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i-QfoPsQEeWP3dvSpSHfRQ" name="update_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_i-PRgPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_qaJUUPsOEeWP3dvSpSHfRQ" name="BrokersOffice3" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_tnMNMPsQEeWP3dvSpSHfRQ" start="__0bPIPsPEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JbDAkPsPEeWP3dvSpSHfRQ" name="clientSellStock_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_JbAkUPsPEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_IA-TcPsIEeWrYoVVOWxOug" name="Client5" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" finish="_IA-6gPsIEeWrYoVVOWxOug" start="_L6Dd0PsIEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_gGclAPsQEeWP3dvSpSHfRQ" name="ClientStockRepo1" covered="_qX7L8Pr8EeWrYoVVOWxOug" finish="_rv5UYPsQEeWP3dvSpSHfRQ" start="_m4HGEPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pznTEPr-EeWrYoVVOWxOug" name="findAllByClientId_MessageRecv" covered="_qX7L8Pr8EeWrYoVVOWxOug" message="_pzkPwPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_rv5UYPsQEeWP3dvSpSHfRQ" name="update_Message1Send" covered="_qX7L8Pr8EeWrYoVVOWxOug" message="_rv24IPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tnMNMPsQEeWP3dvSpSHfRQ" name="update_Message2Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_tnLmIPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_C3D5sPsQEeWP3dvSpSHfRQ" name="ClientStockService1" covered="_WNAx0Pr8EeWrYoVVOWxOug" finish="_rv6igPsQEeWP3dvSpSHfRQ" start="_Gy-VoPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yIc8cPsREeWP3dvSpSHfRQ" name="makeBankTransfer_MessageRecv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_yIagMPsREeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YZa9APsSEeWP3dvSpSHfRQ" name="makeABankTransfer_MessageSend" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_YZYgwPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YZa9AfsSEeWP3dvSpSHfRQ" name="makeABankTransfer_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_YZYgwPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kSF0IPsSEeWP3dvSpSHfRQ" name="update_Message5Recv" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_kSCJwPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aHlvAfsSEeWP3dvSpSHfRQ" name="update_Message3Recv" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_aHkg4PsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yIcVYPsREeWP3dvSpSHfRQ" name="makeBankTransfer_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_yIagMPsREeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dPzNcPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_MessageSend" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_dPymYPpfEeWZ16JFCZ3NlQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bds9cPr-EeWrYoVVOWxOug" name="getStocksByClientId_Message0Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_bdrIQPr-EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gy-VoPsQEeWP3dvSpSHfRQ" name="save_MessageRecv" covered="_WNAx0Pr8EeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8zHXEPsLEeWrYoVVOWxOug" name="responseToClientOffer_Message0Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_8zGI8PsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hUdVsPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_hUcHkPpfEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yRqvoPpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message2Send" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_yRqIkPpdEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VmlOwPpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_VmknsPpeEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hdytUPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_hdxfMPpeEeWZ16JFCZ3NlQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_H265MPsAEeWrYoVVOWxOug" name="getStockQuotesByDateRange_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_H26SIPsAEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_fVN3QPpeEeWZ16JFCZ3NlQ" name="Broker1" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_wbKrkfpeEeWZ16JFCZ3NlQ" start="_hdzUYPpeEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Tsn74PsAEeWrYoVVOWxOug" name="findAllByDateRange_Message0Send" covered="_ncRTIPr8EeWrYoVVOWxOug" message="_TsmtwPsAEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_92N-YPsBEeWrYoVVOWxOug" name="findAllByAcountId_MessageSend" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_92LiIPsBEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_T_cC0PsDEeWrYoVVOWxOug" name="findAllById_MessageSend" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_pnx5sPsCEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uqWw0PsEEeWrYoVVOWxOug" name="getActualyExchangeRate_Message0Send" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_uqUUkPsEEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_teaQMPsGEeWrYoVVOWxOug" name="ExchangeRateRepo0" covered="_w92PsPr_EeWrYoVVOWxOug" finish="_5wuWYPsGEeWrYoVVOWxOug" start="_2Fv5cPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6nDvMPsLEeWrYoVVOWxOug" name="responseToClientOffer_MessageSend" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_6nChEPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_6nEWQPsLEeWrYoVVOWxOug" name="responseToClientOffer_MessageRecv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_6nChEPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__0aoEPsPEeWP3dvSpSHfRQ" name="clientSellStock_Message0Send" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="__0WWoPsPEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yIcVYPsREeWP3dvSpSHfRQ" name="makeBankTransfer_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_yIagMPsREeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_5H1wcPsREeWP3dvSpSHfRQ" name="ClientAccountFundsService1" covered="_19RT4Pr7EeWrYoVVOWxOug" finish="_kSF0IPsSEeWP3dvSpSHfRQ" start="_aHlvAfsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BrsLYPsTEeWP3dvSpSHfRQ" name="clientSellStock_Message1Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_Brq9QPsTEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0rausPyhEeWgyMW-EunB0g" name="makeBankTransfer_Message2Send" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_0rYScPyhEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_FQ17APwBEeW-7N9COpRtqw" name="Client1Finish" covered="_d5ky8PpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Dp928PsIEeWrYoVVOWxOug" name="generateOffer_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mNDE8PsSEeWP3dvSpSHfRQ" name="update_Message6Recv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_vzlhYPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_duda8fsFEeWrYoVVOWxOug" name="getActualyExchangeRate_Message2Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B2ioMPpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message0Send" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_B2iBIPpdEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_g6GUsPr-EeWrYoVVOWxOug" name="ClientStockRepo0" covered="_qX7L8Pr8EeWrYoVVOWxOug" finish="_sXmSwPr-EeWrYoVVOWxOug" start="_pznTEPr-EeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PEID0PpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message1Send" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_PEG1sPpdEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_otEiAfpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_MessageRecv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_otCFwPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MCorsPsAEeWrYoVVOWxOug" name="getStockQuotesByDateRange_Message0Send" covered="_Nry-sPr8EeWrYoVVOWxOug" message="_MCndkPsAEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_R1YQ8fsBEeWrYoVVOWxOug" name="getAvailableFoundsByAccountId_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_R1WbwPsBEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_tqTJYPsBEeWrYoVVOWxOug" name="ClientAccountFundsRepo0" covered="_dqkvkPr8EeWrYoVVOWxOug" finish="_tN9WMPsCEeWrYoVVOWxOug" start="_pnzH0PsCEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2FuEQPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_MessageSend" covered="_6wHX0Pr7EeWrYoVVOWxOug" message="_2Fs2IPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_12DigPsEEeWrYoVVOWxOug" name="Bank1" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" finish="_W7stsPsFEeWrYoVVOWxOug" start="_Tv6uMPsFEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5wuWYPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_Message0Send" covered="_w92PsPr_EeWrYoVVOWxOug" message="_5wshMPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_W7stsPsFEeWrYoVVOWxOug" name="getExchangeRate_Message0Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_W7q4gPsFEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8zH-IPsLEeWrYoVVOWxOug" name="responseToClientOffer_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="__PlZgPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i-QfofsQEeWP3dvSpSHfRQ" name="update_MessageRecv" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_i-PRgPsQEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_neJdQPsOEeWP3dvSpSHfRQ" name="Broker3" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_BrsycPsTEeWP3dvSpSHfRQ" start="_JbEOsPsPEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JbEOsPsPEeWP3dvSpSHfRQ" name="clientSellStock_MessageRecv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_JbAkUPsPEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_yIc8cPsREeWP3dvSpSHfRQ" name="makeBankTransfer_MessageRecv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_yIagMPsREeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mNCd4PsSEeWP3dvSpSHfRQ" name="update_Message6Send" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_mNBPwPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_INYZ0fyfEeWgyMW-EunB0g" name="BankAdapter3" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" finish="_0rausPyhEeWgyMW-EunB0g" start="_9kh54PygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_23yfoPyhEeWgyMW-EunB0g" name="makeABankTransfer_Message2Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_23x4kPyhEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Dp-eAPsIEeWrYoVVOWxOug" name="generateOffer_MessageRecv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VmlOwPpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7T_pgPsSEeWP3dvSpSHfRQ" name="makeBankTransfer_Message0Send" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_7T90UPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pQbOEfpcEeWZ16JFCZ3NlQ" name="playStockMarket_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xhV7YPpcEeWZ16JFCZ3NlQ" name="execute_MessageRecv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_xhTfIPpcEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hUcuoPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_Message0Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_hUcHkPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bdtkgPr-EeWrYoVVOWxOug" name="getStocksByClientId_Message0Send" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_bdrIQPr-EeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_FC0Z4PsAEeWrYoVVOWxOug" name="StockQuotesService0" covered="_Nry-sPr8EeWrYoVVOWxOug" finish="_MCorsPsAEeWrYoVVOWxOug" start="_H27gQPsAEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_P2uBUPsAEeWrYoVVOWxOug" name="findAllByDateRange_MessageRecv" covered="_ncRTIPr8EeWrYoVVOWxOug" message="_P2sMIPsAEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MCorsPsAEeWrYoVVOWxOug" name="getStockQuotesByDateRange_Message0Send" covered="_Nry-sPr8EeWrYoVVOWxOug" message="_MCndkPsAEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MCoEoPsAEeWrYoVVOWxOug" name="getStockQuotesByDateRange_Message0Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_MCndkPsAEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wbLSoPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_Message0Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_wbKrkPpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5gAJIPpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_Message0Send" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_5f_iEPpeEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GQSgkPpmEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_GQQEUPpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_R1YQ8PsBEeWrYoVVOWxOug" name="getAvailableFoundsByAccountId_MessageSend" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_R1WbwPsBEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fdMN4fpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_MessageRecv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_fdLm0PpmEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wbLSoPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_Message0Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_wbKrkPpeEeWZ16JFCZ3NlQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_92OlcPsBEeWrYoVVOWxOug" name="findAllByAcountId_MessageRecv" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_92LiIPsBEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zIKG8PsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message4Send" covered="_6wHX0Pr7EeWrYoVVOWxOug" message="_zIHqsPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_L6Dd0PsIEeWrYoVVOWxOug" name="execute_Message0Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_L6BBkPsIEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_L6C2wPsIEeWrYoVVOWxOug" name="execute_Message0Send" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_L6BBkPsIEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_8zHXEPsLEeWrYoVVOWxOug" name="responseToClientOffer_Message0Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_8zGI8PsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f4x5QPsMEeWrYoVVOWxOug" name="makeADecision_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_79-FgPsQEeWP3dvSpSHfRQ" name="BankAdapter2" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" finish="_7T_pgPsSEeWP3dvSpSHfRQ" start="_yIc8cPsREeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DHyggPsUEeWP3dvSpSHfRQ" name="update_Message2Send" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_tnLmIPsQEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YZa9APsSEeWP3dvSpSHfRQ" name="makeABankTransfer_MessageSend" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_YZYgwPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JDZYwPsTEeWP3dvSpSHfRQ" name="clientSellStock_Message2Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_JDYKoPsTEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wIkoAPsUEeWP3dvSpSHfRQ" name="MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_wIjZ4PsUEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gba3gPygEeWgyMW-EunB0g" name="clientBuyStock_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_GbYbQPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gy-VoPsQEeWP3dvSpSHfRQ" name="save_MessageRecv" covered="_WNAx0Pr8EeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_0rbVwPyhEeWgyMW-EunB0g" name="makeBankTransfer_Message2Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_0rYScPyhEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5gAJIPpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_Message0Send"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wmNbsPsTEeWP3dvSpSHfRQ" name="playStockMarket_MessageRecv0" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_wmLmgPsTEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xhVUUPpcEeWZ16JFCZ3NlQ" name="execute_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_xhTfIPpcEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_7BDXEPpcEeWZ16JFCZ3NlQ" name="Broker0" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_hUdVsPpfEeWZ16JFCZ3NlQ" start="_B2ioMfpdEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_w4umgPr8EeWrYoVVOWxOug" name="ClientStockService0" covered="_WNAx0Pr8EeWrYoVVOWxOug" finish="_bdtkgPr-EeWrYoVVOWxOug" start="_RzW_EPr-EeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pznTEPr-EeWrYoVVOWxOug" name="findAllByClientId_MessageRecv" covered="_qX7L8Pr8EeWrYoVVOWxOug" message="_pzkPwPr-EeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_kbsMYPpfEeWZ16JFCZ3NlQ" name="BrokersOffice1" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_wfZ14PpfEeWZ16JFCZ3NlQ" start="_otEiAfpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_5petoPsAEeWrYoVVOWxOug" name="Bank0" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" finish="_USaUEPsBEeWrYoVVOWxOug" start="_R1YQ8fsBEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lG0v4fpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_Message0Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_lG0I0PpmEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vLW6MPsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message3Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_vLVFAPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_X8wXgPsEEeWrYoVVOWxOug" name="BankAdapter1" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" finish="_W7tUwPsFEeWrYoVVOWxOug" start="_uqX-8PsEEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_pBPWwPsFEeWrYoVVOWxOug" name="ExchangeRateService0" covered="_6wHX0Pr7EeWrYoVVOWxOug" finish="_zIKG8PsGEeWrYoVVOWxOug" start="_vLXhQPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_4wOwcPsLEeWrYoVVOWxOug" name="BrokersOffice2" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_8zHXEPsLEeWrYoVVOWxOug" start="_6nEWQPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_3DisgPsIEeWrYoVVOWxOug" name="Broker2" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_8zH-IPsLEeWrYoVVOWxOug" start="_SjcFQPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DHjP8PsUEeWP3dvSpSHfRQ" name="update_Message0Send" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_m4FQ4PsQEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kSD-8PsSEeWP3dvSpSHfRQ" name="update_Message5Send" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_kSCJwPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lw1bMPygEeWgyMW-EunB0g" name="getDataForBankTransfer_MessageRecv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_lwyX4PygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oKh2cPygEeWgyMW-EunB0g" name="getDataForBankTransfer_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_oKeMEPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_8DtK4PyhEeWgyMW-EunB0g" name="ClientAccountFundsRepo2" covered="_dqkvkPr8EeWrYoVVOWxOug" finish="_NPQ38PyiEeWgyMW-EunB0g" start="_LhOo0PyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_USv-QPyhEeWgyMW-EunB0g" name="Bank3" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" finish="_23yfoPyhEeWgyMW-EunB0g" start="_xEuU0PyhEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9kh54PygEeWgyMW-EunB0g" name="makeBankTransfer_Message1Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_9kgrwPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5gAJIfpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_Message0Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Gy9ukPsQEeWP3dvSpSHfRQ" name="save_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_B2ioMfpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_B2iBIPpdEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_dPz0gPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_MessageRecv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_dPymYPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_OH_OoPsAEeWrYoVVOWxOug" name="StockQuotesRepo0" covered="_ncRTIPr8EeWrYoVVOWxOug" finish="_Tsn74PsAEeWrYoVVOWxOug" start="_P2uBUPsAEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fdMN4fpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_MessageRecv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_fdLm0PpmEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_VmlOwfpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_MessageRecv"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_fVN3QPpeEeWZ16JFCZ3NlQ" name="Broker1" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_wbKrkfpeEeWZ16JFCZ3NlQ" start="_hdzUYPpeEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_H27gQPsAEeWrYoVVOWxOug" name="getStockQuotesByDateRange_MessageRecv" covered="_Nry-sPr8EeWrYoVVOWxOug" message="_H26SIPsAEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_MCoEoPsAEeWrYoVVOWxOug" name="getStockQuotesByDateRange_Message0Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_MCndkPsAEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_R1YQ8PsBEeWrYoVVOWxOug" name="getAvailableFoundsByAccountId_MessageSend" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_R1WbwPsBEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Tv6HIPsFEeWrYoVVOWxOug" name="getExchangeRate_MessageSend" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_Tv2cwPsFEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uqX-8PsEEeWrYoVVOWxOug" name="getActualyExchangeRate_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_uqUUkPsEEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__Lpb8PyQEeWgyMW-EunB0g" name="generateOffer_MessageSend0" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="__LkjcPyQEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SjbeMPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_SjZpAPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_i-QfoPsQEeWP3dvSpSHfRQ" name="update_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_i-PRgPsQEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JbDAkPsPEeWP3dvSpSHfRQ" name="clientSellStock_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_JbAkUPsPEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_rv5UYPsQEeWP3dvSpSHfRQ" name="update_Message1Send" covered="_qX7L8Pr8EeWrYoVVOWxOug" message="_rv24IPsQEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tnMNMPsQEeWP3dvSpSHfRQ" name="update_Message2Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_tnLmIPsQEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_YZa9AfsSEeWP3dvSpSHfRQ" name="makeABankTransfer_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_YZYgwPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vzn9oPsSEeWP3dvSpSHfRQ" name="makeABankTransfer_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_vzlhYPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kSF0IPsSEeWP3dvSpSHfRQ" name="update_Message5Recv" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_kSCJwPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7UAQkPsSEeWP3dvSpSHfRQ" name="makeBankTransfer_Message0Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_7T90UPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_KQo1kPygEeWgyMW-EunB0g" name="ActionExecSpec" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_oKgoUPygEeWgyMW-EunB0g" start="_lw1bMPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GQSgkPpmEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_6hmlgfpdEeWZ16JFCZ3NlQ" name="Client0Finish" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" execution="_6hmlgPpdEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_PoV5QPpfEeWZ16JFCZ3NlQ" name="BrokersOffice0" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_hUcuoPpfEeWZ16JFCZ3NlQ" start="_dPz0gPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_RzVJ4Pr-EeWrYoVVOWxOug" name="getStocksByClientId_MessageSend" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_RzPDQPr-EeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_RzW_EPr-EeWrYoVVOWxOug" name="getStocksByClientId_MessageRecv" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_RzPDQPr-EeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_PEIq4PpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message1Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_PEG1sPpdEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hUdVsPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_hUcHkPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_sXmSwPr-EeWrYoVVOWxOug" name="findAllByClientId_Message0Send" covered="_qX7L8Pr8EeWrYoVVOWxOug" message="_sXlEoPr-EeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_otEiAPpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_MessageSend" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_otCFwPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hdzUYPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_MessageRecv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_hdxfMPpeEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wbKrkfpeEeWZ16JFCZ3NlQ" name="getStockQuotes_Message0Send" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_wbKrkPpeEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wfZ14PpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_Message0Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_wfYnwPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wfac8PpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_Message0Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_wfYnwPpfEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_fdMN4PpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_fdLm0PpmEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_JP8IkPpmEeWZ16JFCZ3NlQ" name="BankAdapter0" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" finish="_USaUEfsBEeWrYoVVOWxOug" start="_fdMN4fpmEeWZ16JFCZ3NlQ"/>
     <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_eMwdUPsBEeWrYoVVOWxOug" name="ClientAccountFundsService0" covered="_19RT4Pr7EeWrYoVVOWxOug" finish="_ZQHHsPsCEeWrYoVVOWxOug" start="_92OlcPsBEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tN9WMPsCEeWrYoVVOWxOug" name="findAllById_Message0Send" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_tN8IEPsCEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lG0v4PpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_Message0Send" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_lG0I0PpmEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pnzH0PsCEeWrYoVVOWxOug" name="findAllById_MessageRecv" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_pnx5sPsCEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_USaUEPsBEeWrYoVVOWxOug" name="getAvailableFoundsByAccountId_Message0Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_USZtAPsBEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_lG0v4PpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_Message0Send" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_lG0I0PpmEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_tN9WMPsCEeWrYoVVOWxOug" name="findAllById_Message0Send" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_tN8IEPsCEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZQHuwPsCEeWrYoVVOWxOug" name="getAllByAcountId_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_ZQFSgPsCEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_USaUEfsBEeWrYoVVOWxOug" name="getAvailableFoundsByAccountId_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_USZtAPsBEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ZQHHsPsCEeWrYoVVOWxOug" name="getAllByAcountId_MessageSend" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_ZQFSgPsCEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_T_SR0PsDEeWrYoVVOWxOug" name="findAllById_Message0Recv" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_tN8IEPsCEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oBo7MfpmEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount_Message0Send" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_oBo7MPpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oBpiQPpmEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount_Message0Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_oBo7MPpmEeWZ16JFCZ3NlQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UaUykPsEEeWrYoVVOWxOug" name="getActualyExchangeRate_MessageSend" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_UaSWUPsEEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_UaWAsPsEEeWrYoVVOWxOug" name="getActualyExchangeRate_MessageRecv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_UaSWUPsEEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2FuEQPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_MessageSend" covered="_6wHX0Pr7EeWrYoVVOWxOug" message="_2Fs2IPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uqWw0PsEEeWrYoVVOWxOug" name="getActualyExchangeRate_Message0Send" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_uqUUkPsEEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Tv6HIPsFEeWrYoVVOWxOug" name="getExchangeRate_MessageSend" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_Tv2cwPsFEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_X8wXgPsEEeWrYoVVOWxOug" name="BankAdapter1" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" finish="_W7tUwPsFEeWrYoVVOWxOug" start="_uqX-8PsEEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_2Fv5cPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_MessageRecv" covered="_w92PsPr_EeWrYoVVOWxOug" message="_2Fs2IPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_teaQMPsGEeWrYoVVOWxOug" name="ExchangeRateRepo0" covered="_w92PsPr_EeWrYoVVOWxOug" finish="_5wuWYPsGEeWrYoVVOWxOug" start="_2Fv5cPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zIKG8PsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message4Send" covered="_6wHX0Pr7EeWrYoVVOWxOug" message="_zIHqsPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Tv6uMPsFEeWrYoVVOWxOug" name="getExchangeRate_MessageRecv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_Tv2cwPsFEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vLXhQPsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message3Recv" covered="_6wHX0Pr7EeWrYoVVOWxOug" message="_vLVFAPsGEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_W7tUwPsFEeWrYoVVOWxOug" name="getExchangeRate_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_bCSIkPsFEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_bCSvoPsFEeWrYoVVOWxOug" name="getActualyExchangeRate_Message1Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="_bCSIkPsFEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_5wtvUPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_Message0Recv" covered="_6wHX0Pr7EeWrYoVVOWxOug" message="_5wshMPsGEeWrYoVVOWxOug"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_zIKuAPsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message4Recv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_zIHqsPsGEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_L6Dd0PsIEeWrYoVVOWxOug" name="execute_Message0Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_L6BBkPsIEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_4wOwcPsLEeWrYoVVOWxOug" name="BrokersOffice2" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_8zHXEPsLEeWrYoVVOWxOug" start="_6nEWQPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PmnoPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_Message0Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="__PlZgPsLEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f4wrIPsMEeWrYoVVOWxOug" name="makeADecision_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_f4tAwPsMEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__0aoEPsPEeWP3dvSpSHfRQ" name="clientSellStock_Message0Send" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="__0WWoPsPEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_neJdQPsOEeWP3dvSpSHfRQ" name="Broker3" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_BrsycPsTEeWP3dvSpSHfRQ" start="_JbEOsPsPEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__LqDAPyQEeWgyMW-EunB0g" name="generateOffer_MessageRecv0" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="__LkjcPyQEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_IA-TcPsIEeWrYoVVOWxOug" name="Client1" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" start="_L6Dd0PsIEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SjcFQPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_MessageRecv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_SjZpAPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__PmnoPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_Message0Recv" covered="_rNfgEPpOEeWZ16JFCZ3NlQ" message="__PlZgPsLEeWrYoVVOWxOug"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_f4wrIPsMEeWrYoVVOWxOug" name="makeADecision_MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_qaJUUPsOEeWP3dvSpSHfRQ" name="BrokersOffice3" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" finish="_tnMNMPsQEeWP3dvSpSHfRQ" start="__0bPIPsPEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_C3D5sPsQEeWP3dvSpSHfRQ" name="ClientStockService1" covered="_WNAx0Pr8EeWrYoVVOWxOug" finish="_rv6igPsQEeWP3dvSpSHfRQ" start="_Gy-VoPsQEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_gGclAPsQEeWP3dvSpSHfRQ" name="ClientStockRepo1" covered="_qX7L8Pr8EeWrYoVVOWxOug" finish="_rv5UYPsQEeWP3dvSpSHfRQ" start="_m4HGEPsQEeWP3dvSpSHfRQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_m4HGEPsQEeWP3dvSpSHfRQ" name="update_Message0Recv" covered="_qX7L8Pr8EeWrYoVVOWxOug" message="_m4FQ4PsQEeWP3dvSpSHfRQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="__0bPIPsPEeWP3dvSpSHfRQ" name="clientSellStock_Message0Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="__0WWoPsPEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JbEOsPsPEeWP3dvSpSHfRQ" name="clientSellStock_MessageRecv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_JbAkUPsPEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_IA-6gPsIEeWrYoVVOWxOug" name="Client5Finish" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" execution="_IA-TcPsIEeWrYoVVOWxOug"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_79-FgPsQEeWP3dvSpSHfRQ" name="BankAdapter2" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" finish="_7T_pgPsSEeWP3dvSpSHfRQ" start="_yIc8cPsREeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_BynIMPsSEeWP3dvSpSHfRQ" name="Bank2" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" finish="_mNDE8PsSEeWP3dvSpSHfRQ" start="_YZa9AfsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pan0MPsSEeWP3dvSpSHfRQ" name="update_Message4Send" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_hmRuIPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_rv6igPsQEeWP3dvSpSHfRQ" name="update_Message1Recv" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_rv24IPsQEeWP3dvSpSHfRQ"/>
     <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_dVXSkPsSEeWP3dvSpSHfRQ" name="ClientAccountFundsRepo1" covered="_dqkvkPr8EeWrYoVVOWxOug" finish="_kSD-8PsSEeWP3dvSpSHfRQ" start="_hmTjUPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_5H1wcPsREeWP3dvSpSHfRQ" name="ClientAccountFundsService1" covered="_19RT4Pr7EeWrYoVVOWxOug" finish="_kSF0IPsSEeWP3dvSpSHfRQ" start="_aHlvAfsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aHlvAPsSEeWP3dvSpSHfRQ" name="update_Message3Send" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_aHkg4PsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_pan0MPsSEeWP3dvSpSHfRQ" name="update_Message4Send" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_hmRuIPsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_BynIMPsSEeWP3dvSpSHfRQ" name="Bank2" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" finish="_mNDE8PsSEeWP3dvSpSHfRQ" start="_YZa9AfsSEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_aHlvAfsSEeWP3dvSpSHfRQ" name="update_Message3Recv" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_aHkg4PsSEeWP3dvSpSHfRQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_hmTjUPsSEeWP3dvSpSHfRQ" name="update_Message4Recv" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_hmRuIPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_mNDE8PsSEeWP3dvSpSHfRQ" name="update_Message6Recv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_vzlhYPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_vzn9oPsSEeWP3dvSpSHfRQ" name="makeABankTransfer_Message0Recv" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_vzlhYPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7T_pgPsSEeWP3dvSpSHfRQ" name="makeBankTransfer_Message0Send" covered="_U7BhkPpkEeWZ16JFCZ3NlQ" message="_7T90UPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_7UAQkPsSEeWP3dvSpSHfRQ" name="makeBankTransfer_Message0Recv" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_7T90UPsSEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BrsLYPsTEeWP3dvSpSHfRQ" name="clientSellStock_Message1Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_Brq9QPsTEeWP3dvSpSHfRQ"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BrsycPsTEeWP3dvSpSHfRQ" name="clientSellStock_Message1Recv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_JDYKoPsTEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_JDZYwPsTEeWP3dvSpSHfRQ" name="clientSellStock_Message2Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_JDYKoPsTEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wmNbsPsTEeWP3dvSpSHfRQ" name="playStockMarket_MessageRecv0" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_wmLmgPsTEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DHjP8PsUEeWP3dvSpSHfRQ" name="update_Message0Send" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_m4FQ4PsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_DHyggPsUEeWP3dvSpSHfRQ" name="update_Message2Send" covered="_WNAx0Pr8EeWrYoVVOWxOug" message="_tnLmIPsQEeWP3dvSpSHfRQ"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_wIkoAPsUEeWP3dvSpSHfRQ" name="MessageSend" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_wIjZ4PsUEeWP3dvSpSHfRQ"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_gPvmoPyfEeWgyMW-EunB0g" name="Broker4" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_oKh2cPygEeWgyMW-EunB0g" start="_GbcssPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_GbcssPygEeWgyMW-EunB0g" name="clientBuyStock_MessageRecv" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_GbYbQPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oKgoUPygEeWgyMW-EunB0g" name="getDataForBankTransfer_Message0Send" covered="_IDYTAPpfEeWZ16JFCZ3NlQ" message="_oKeMEPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uuiWAPygEeWgyMW-EunB0g" name="clientBuyStock_Message0Send" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_uuhu8PygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_uui9EPygEeWgyMW-EunB0g" name="clientBuyStock_Message0Recv" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_uuhu8PygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_9khS0PygEeWgyMW-EunB0g" name="makeBankTransfer_Message1Send" covered="_d5ky8PpOEeWZ16JFCZ3NlQ" message="_9kgrwPygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_g3w-APyhEeWgyMW-EunB0g" name="ClientAccountFundsService2" covered="_19RT4Pr7EeWrYoVVOWxOug" finish="_H9UdMPyiEeWgyMW-EunB0g" start="_FQK6cPyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_LhOo0PyiEeWgyMW-EunB0g" name="update_Message9Recv" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_LhMzoPyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_FQK6cPyiEeWgyMW-EunB0g" name="update_Message7Recv" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_FQJFQPyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_xEuU0PyhEeWgyMW-EunB0g" name="makeABankTransfer_Message1Recv" covered="_WgrQwPpkEeWZ16JFCZ3NlQ" message="_xEsfoPyhEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_NPQ38PyiEeWgyMW-EunB0g" name="update_Message10Send" covered="_dqkvkPr8EeWrYoVVOWxOug" message="_NPPp0PyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_H9UdMPyiEeWgyMW-EunB0g" name="update_Message8Send" covered="_19RT4Pr7EeWrYoVVOWxOug" message="_H9TPEPyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_SU3f0PyiEeWgyMW-EunB0g" name="getDataForBankTransfer_MessageSend" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" message="_lwyX4PygEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_bPWHgPyiEeWgyMW-EunB0g" name="ActionExecSpec0Start" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" execution="_bPWukPyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ActionExecutionSpecification" xmi:id="_bPWukPyiEeWgyMW-EunB0g" name="ActionExecSpec0" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" finish="_bPXVoPyiEeWgyMW-EunB0g" start="_bPWHgPyiEeWgyMW-EunB0g"/>
+    <fragment xmi:type="uml:ExecutionOccurrenceSpecification" xmi:id="_bPXVoPyiEeWgyMW-EunB0g" name="ActionExecSpec0Finish" covered="_cHR5cPpPEeWZ16JFCZ3NlQ" execution="_bPWukPyiEeWgyMW-EunB0g"/>
     <message xmi:type="uml:Message" xmi:id="_xhTfIPpcEeWZ16JFCZ3NlQ" name="execute_Message" messageSort="asynchCall" receiveEvent="_xhV7YPpcEeWZ16JFCZ3NlQ" sendEvent="_xhVUUPpcEeWZ16JFCZ3NlQ" signature="_W--lkPHNEeWtIMLDeYZRSA"/>
-    <message xmi:type="uml:Message" xmi:id="_3YXZIPpcEeWZ16JFCZ3NlQ" name="getClientStocks_Message" messageSort="asynchCall" receiveEvent="_3YYnQfpcEeWZ16JFCZ3NlQ" sendEvent="_3YYnQPpcEeWZ16JFCZ3NlQ" signature="_U3TPQPpQEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_B2iBIPpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message0" messageSort="asynchCall" receiveEvent="_B2ioMfpdEeWZ16JFCZ3NlQ" sendEvent="_B2ioMPpdEeWZ16JFCZ3NlQ" signature="_5hu6YPpREeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_PEG1sPpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message1" messageSort="reply" receiveEvent="_PEIq4PpdEeWZ16JFCZ3NlQ" sendEvent="_PEID0PpdEeWZ16JFCZ3NlQ" signature="_5hu6YPpREeWZ16JFCZ3NlQ"/>
-    <message xmi:type="uml:Message" xmi:id="_yRqIkPpdEeWZ16JFCZ3NlQ" name="getClientStocks_Message2" messageSort="reply" receiveEvent="_yRrWsPpdEeWZ16JFCZ3NlQ" sendEvent="_yRqvoPpdEeWZ16JFCZ3NlQ" signature="_U3TPQPpQEeWZ16JFCZ3NlQ"/>
-    <message xmi:type="uml:Message" xmi:id="_VmknsPpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_Message" messageSort="asynchCall" receiveEvent="_VmlOwfpeEeWZ16JFCZ3NlQ" sendEvent="_VmlOwPpeEeWZ16JFCZ3NlQ" signature="_CQV7MPpQEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_hdxfMPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_Message" messageSort="asynchCall" receiveEvent="_hdzUYPpeEeWZ16JFCZ3NlQ" sendEvent="_hdytUPpeEeWZ16JFCZ3NlQ" signature="_sqW_UPpREeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_wbKrkPpeEeWZ16JFCZ3NlQ" name="getStockQuotes_Message0" messageSort="reply" receiveEvent="_wbLSoPpeEeWZ16JFCZ3NlQ" sendEvent="_wbKrkfpeEeWZ16JFCZ3NlQ" signature="_sqW_UPpREeWZ16JFCZ3NlQ"/>
-    <message xmi:type="uml:Message" xmi:id="_5f_iEPpeEeWZ16JFCZ3NlQ" name="getActualStockQuotes_Message0" messageSort="reply" receiveEvent="_5gAJIfpeEeWZ16JFCZ3NlQ" sendEvent="_5gAJIPpeEeWZ16JFCZ3NlQ" signature="_CQV7MPpQEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_dPymYPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_Message" messageSort="asynchCall" receiveEvent="_dPz0gPpfEeWZ16JFCZ3NlQ" sendEvent="_dPzNcPpfEeWZ16JFCZ3NlQ" signature="_AHgMkPKTEeWopulrJJ2QVA"/>
     <message xmi:type="uml:Message" xmi:id="_hUcHkPpfEeWZ16JFCZ3NlQ" name="getStockByClientId_Message0" messageSort="reply" receiveEvent="_hUdVsPpfEeWZ16JFCZ3NlQ" sendEvent="_hUcuoPpfEeWZ16JFCZ3NlQ" signature="_AHgMkPKTEeWopulrJJ2QVA"/>
     <message xmi:type="uml:Message" xmi:id="_otCFwPpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_Message" messageSort="asynchCall" receiveEvent="_otEiAfpfEeWZ16JFCZ3NlQ" sendEvent="_otEiAPpfEeWZ16JFCZ3NlQ" signature="_mBU5QPJjEeWopulrJJ2QVA"/>
     <message xmi:type="uml:Message" xmi:id="_wfYnwPpfEeWZ16JFCZ3NlQ" name="getActualyStockQuotes_Message0" messageSort="reply" receiveEvent="_wfac8PpfEeWZ16JFCZ3NlQ" sendEvent="_wfZ14PpfEeWZ16JFCZ3NlQ" signature="_mBU5QPJjEeWopulrJJ2QVA"/>
-    <message xmi:type="uml:Message" xmi:id="_GQQEUPpmEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount_Message" messageSort="asynchCall" receiveEvent="_GQSgkfpmEeWZ16JFCZ3NlQ" sendEvent="_GQSgkPpmEeWZ16JFCZ3NlQ" signature="_cAKi0PplEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_fdLm0PpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_Message" messageSort="asynchCall" receiveEvent="_fdMN4fpmEeWZ16JFCZ3NlQ" sendEvent="_fdMN4PpmEeWZ16JFCZ3NlQ" signature="_onOJ8PplEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_lG0I0PpmEeWZ16JFCZ3NlQ" name="getAvailableFounds_Message0" messageSort="reply" receiveEvent="_lG0v4fpmEeWZ16JFCZ3NlQ" sendEvent="_lG0v4PpmEeWZ16JFCZ3NlQ" signature="_onOJ8PplEeWZ16JFCZ3NlQ"/>
-    <message xmi:type="uml:Message" xmi:id="_oBo7MPpmEeWZ16JFCZ3NlQ" name="getAvailableFundsInAccount_Message0" messageSort="reply" receiveEvent="_oBpiQPpmEeWZ16JFCZ3NlQ" sendEvent="_oBo7MfpmEeWZ16JFCZ3NlQ" signature="_cAKi0PplEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_RzPDQPr-EeWrYoVVOWxOug" name="getStocksByClientId_Message" messageSort="asynchCall" receiveEvent="_RzW_EPr-EeWrYoVVOWxOug" sendEvent="_RzVJ4Pr-EeWrYoVVOWxOug" signature="_lgZm4Pr9EeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_bdrIQPr-EeWrYoVVOWxOug" name="getStocksByClientId_Message0" messageSort="reply" receiveEvent="_bds9cPr-EeWrYoVVOWxOug" sendEvent="_bdtkgPr-EeWrYoVVOWxOug" signature="_lgZm4Pr9EeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_pzkPwPr-EeWrYoVVOWxOug" name="findAllByClientId_Message" messageSort="asynchCall" receiveEvent="_pznTEPr-EeWrYoVVOWxOug" signature="_G2aJUPr-EeWrYoVVOWxOug"/>
@@ -1017,23 +1020,19 @@
     <message xmi:type="uml:Message" xmi:id="_ZQFSgPsCEeWrYoVVOWxOug" name="getAllByAcountId_Message" messageSort="reply" receiveEvent="_ZQHuwPsCEeWrYoVVOWxOug" sendEvent="_ZQHHsPsCEeWrYoVVOWxOug" signature="_QZnEgPpnEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_pnx5sPsCEeWrYoVVOWxOug" name="findAllById_Message" messageSort="asynchCall" receiveEvent="_pnzH0PsCEeWrYoVVOWxOug" sendEvent="_T_cC0PsDEeWrYoVVOWxOug" signature="_XJe10PpnEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_tN8IEPsCEeWrYoVVOWxOug" name="findAllById_Message0" messageSort="reply" receiveEvent="_T_SR0PsDEeWrYoVVOWxOug" sendEvent="_tN9WMPsCEeWrYoVVOWxOug" signature="_XJe10PpnEeWZ16JFCZ3NlQ"/>
-    <message xmi:type="uml:Message" xmi:id="_UaSWUPsEEeWrYoVVOWxOug" name="getActualyExchangeRate_Message" messageSort="asynchCall" receiveEvent="_UaWAsPsEEeWrYoVVOWxOug" sendEvent="_UaUykPsEEeWrYoVVOWxOug" signature="_3H1I4PsDEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_uqUUkPsEEeWrYoVVOWxOug" name="getActualyExchangeRate_Message0" messageSort="asynchCall" receiveEvent="_uqX-8PsEEeWrYoVVOWxOug" sendEvent="_uqWw0PsEEeWrYoVVOWxOug" signature="_cfTVoPsEEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_Tv2cwPsFEeWrYoVVOWxOug" name="getExchangeRate_Message" messageSort="asynchCall" receiveEvent="_Tv6uMPsFEeWrYoVVOWxOug" sendEvent="_Tv6HIPsFEeWrYoVVOWxOug" signature="_Tm1NsPKAEeWopulrJJ2QVA"/>
     <message xmi:type="uml:Message" xmi:id="_W7q4gPsFEeWrYoVVOWxOug" name="getExchangeRate_Message0" messageSort="reply" receiveEvent="_W7tUwPsFEeWrYoVVOWxOug" sendEvent="_W7stsPsFEeWrYoVVOWxOug" signature="_Tm1NsPKAEeWopulrJJ2QVA"/>
     <message xmi:type="uml:Message" xmi:id="_bCSIkPsFEeWrYoVVOWxOug" name="getActualyExchangeRate_Message1" messageSort="reply" receiveEvent="_bCSvoPsFEeWrYoVVOWxOug" sendEvent="_W7tUwPsFEeWrYoVVOWxOug" signature="_cfTVoPsEEeWrYoVVOWxOug"/>
-    <message xmi:type="uml:Message" xmi:id="_ducM0PsFEeWrYoVVOWxOug" name="getActualyExchangeRate_Message2" messageSort="reply" receiveEvent="_duda8fsFEeWrYoVVOWxOug" sendEvent="_duda8PsFEeWrYoVVOWxOug" signature="_3H1I4PsDEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_vLVFAPsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message3" messageSort="asynchCall" receiveEvent="_vLXhQPsGEeWrYoVVOWxOug" sendEvent="_vLW6MPsGEeWrYoVVOWxOug" signature="_epC-cPsGEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_zIHqsPsGEeWrYoVVOWxOug" name="getActualyExchangeRate_Message4" messageSort="reply" receiveEvent="_zIKuAPsGEeWrYoVVOWxOug" sendEvent="_zIKG8PsGEeWrYoVVOWxOug" signature="_epC-cPsGEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_2Fs2IPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_Message" messageSort="asynchCall" receiveEvent="_2Fv5cPsGEeWrYoVVOWxOug" sendEvent="_2FuEQPsGEeWrYoVVOWxOug" signature="_h7rM0PsGEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_5wshMPsGEeWrYoVVOWxOug" name="findAllExchangeRateByDate_Message0" messageSort="reply" receiveEvent="_5wtvUPsGEeWrYoVVOWxOug" sendEvent="_5wuWYPsGEeWrYoVVOWxOug" signature="_h7rM0PsGEeWrYoVVOWxOug"/>
-    <message xmi:type="uml:Message" xmi:id="_Dp8BwPsIEeWrYoVVOWxOug" name="generateOffer_Message" messageSort="asynchCall" receiveEvent="_Dp-eAPsIEeWrYoVVOWxOug" sendEvent="_Dp928PsIEeWrYoVVOWxOug" signature="_-CIEsPsHEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_L6BBkPsIEeWrYoVVOWxOug" name="execute_Message0" messageSort="reply" receiveEvent="_L6Dd0PsIEeWrYoVVOWxOug" sendEvent="_L6C2wPsIEeWrYoVVOWxOug" signature="_W--lkPHNEeWtIMLDeYZRSA"/>
     <message xmi:type="uml:Message" xmi:id="_SjZpAPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_Message" messageSort="asynchCall" receiveEvent="_SjcFQPsLEeWrYoVVOWxOug" sendEvent="_SjbeMPsLEeWrYoVVOWxOug" signature="_KKs4sPsLEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_6nChEPsLEeWrYoVVOWxOug" name="responseToClientOffer_Message" messageSort="asynchCall" receiveEvent="_6nEWQPsLEeWrYoVVOWxOug" sendEvent="_6nDvMPsLEeWrYoVVOWxOug" signature="_p9_rMPsLEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_8zGI8PsLEeWrYoVVOWxOug" name="responseToClientOffer_Message0" messageSort="reply" receiveEvent="_8zH-IPsLEeWrYoVVOWxOug" sendEvent="_8zHXEPsLEeWrYoVVOWxOug" signature="_p9_rMPsLEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="__PlZgPsLEeWrYoVVOWxOug" name="receiveProposedofferClient_Message0" messageSort="reply" receiveEvent="__PmnoPsLEeWrYoVVOWxOug" sendEvent="_8zH-IPsLEeWrYoVVOWxOug" signature="_KKs4sPsLEeWrYoVVOWxOug"/>
-    <message xmi:type="uml:Message" xmi:id="_f4tAwPsMEeWrYoVVOWxOug" name="makeADecision_Message" messageSort="asynchCall" receiveEvent="_f4x5QPsMEeWrYoVVOWxOug" sendEvent="_f4wrIPsMEeWrYoVVOWxOug" signature="_WWV5sPsMEeWrYoVVOWxOug"/>
     <message xmi:type="uml:Message" xmi:id="_JbAkUPsPEeWP3dvSpSHfRQ" name="clientSellStock_Message" messageSort="asynchCall" receiveEvent="_JbEOsPsPEeWP3dvSpSHfRQ" sendEvent="_JbDAkPsPEeWP3dvSpSHfRQ" signature="_-l7RIPsOEeWP3dvSpSHfRQ"/>
     <message xmi:type="uml:Message" xmi:id="__0WWoPsPEeWP3dvSpSHfRQ" name="clientSellStock_Message0" messageSort="asynchCall" receiveEvent="__0bPIPsPEeWP3dvSpSHfRQ" sendEvent="__0aoEPsPEeWP3dvSpSHfRQ" signature="_jucb4PsPEeWP3dvSpSHfRQ"/>
     <message xmi:type="uml:Message" xmi:id="_i-PRgPsQEeWP3dvSpSHfRQ" name="update_Message" messageSort="asynchCall" receiveEvent="_i-QfofsQEeWP3dvSpSHfRQ" sendEvent="_i-QfoPsQEeWP3dvSpSHfRQ" signature="_Rbw5QPsQEeWP3dvSpSHfRQ"/>
@@ -1052,6 +1051,19 @@
     <message xmi:type="uml:Message" xmi:id="_JDYKoPsTEeWP3dvSpSHfRQ" name="clientSellStock_Message2" messageSort="reply" receiveEvent="_JDZYwPsTEeWP3dvSpSHfRQ" sendEvent="_BrsycPsTEeWP3dvSpSHfRQ" signature="_-l7RIPsOEeWP3dvSpSHfRQ"/>
     <message xmi:type="uml:Message" xmi:id="_wmLmgPsTEeWP3dvSpSHfRQ" name="playStockMarket_Message" messageSort="asynchSignal" receiveEvent="_wmNbsPsTEeWP3dvSpSHfRQ" signature="_ShsRgPpKEeWZ16JFCZ3NlQ"/>
     <message xmi:type="uml:Message" xmi:id="_wIjZ4PsUEeWP3dvSpSHfRQ" name="Message" messageSort="asynchSignal" sendEvent="_wIkoAPsUEeWP3dvSpSHfRQ"/>
+    <message xmi:type="uml:Message" xmi:id="__LkjcPyQEeWgyMW-EunB0g" name="generateOffer_Message" messageSort="asynchCall" receiveEvent="__LqDAPyQEeWgyMW-EunB0g" sendEvent="__Lpb8PyQEeWgyMW-EunB0g" signature="_UAinMPyREeWgyMW-EunB0g"/>
+    <message xmi:type="uml:Message" xmi:id="_GbYbQPygEeWgyMW-EunB0g" name="clientBuyStock_Message" messageSort="asynchCall" receiveEvent="_GbcssPygEeWgyMW-EunB0g" sendEvent="_Gba3gPygEeWgyMW-EunB0g" signature="_tL1CkPyfEeWgyMW-EunB0g"/>
+    <message xmi:type="uml:Message" xmi:id="_lwyX4PygEeWgyMW-EunB0g" name="getDataForBankTransfer_Message" messageSort="asynchCall" receiveEvent="_lw1bMPygEeWgyMW-EunB0g" sendEvent="_SU3f0PyiEeWgyMW-EunB0g" signature="_b9hHAPygEeWgyMW-EunB0g"/>
+    <message xmi:type="uml:Message" xmi:id="_oKeMEPygEeWgyMW-EunB0g" name="getDataForBankTransfer_Message0" messageSort="reply" receiveEvent="_oKh2cPygEeWgyMW-EunB0g" sendEvent="_oKgoUPygEeWgyMW-EunB0g" signature="_b9hHAPygEeWgyMW-EunB0g"/>
+    <message xmi:type="uml:Message" xmi:id="_uuhu8PygEeWgyMW-EunB0g" name="clientBuyStock_Message0" messageSort="reply" receiveEvent="_uui9EPygEeWgyMW-EunB0g" sendEvent="_uuiWAPygEeWgyMW-EunB0g" signature="_tL1CkPyfEeWgyMW-EunB0g"/>
+    <message xmi:type="uml:Message" xmi:id="_9kgrwPygEeWgyMW-EunB0g" name="makeBankTransfer_Message1" messageSort="asynchCall" receiveEvent="_9kh54PygEeWgyMW-EunB0g" sendEvent="_9khS0PygEeWgyMW-EunB0g" signature="_gmoEcPsREeWP3dvSpSHfRQ"/>
+    <message xmi:type="uml:Message" xmi:id="_xEsfoPyhEeWgyMW-EunB0g" name="makeABankTransfer_Message1" messageSort="asynchCall" receiveEvent="_xEuU0PyhEeWgyMW-EunB0g" signature="_RkcpQPsSEeWP3dvSpSHfRQ"/>
+    <message xmi:type="uml:Message" xmi:id="_0rYScPyhEeWgyMW-EunB0g" name="makeBankTransfer_Message2" messageSort="reply" receiveEvent="_0rbVwPyhEeWgyMW-EunB0g" sendEvent="_0rausPyhEeWgyMW-EunB0g" signature="_gmoEcPsREeWP3dvSpSHfRQ"/>
+    <message xmi:type="uml:Message" xmi:id="_23x4kPyhEeWgyMW-EunB0g" name="makeABankTransfer_Message2" messageSort="reply" sendEvent="_23yfoPyhEeWgyMW-EunB0g" signature="_RkcpQPsSEeWP3dvSpSHfRQ"/>
+    <message xmi:type="uml:Message" xmi:id="_FQJFQPyiEeWgyMW-EunB0g" name="update_Message7" messageSort="asynchCall" receiveEvent="_FQK6cPyiEeWgyMW-EunB0g" signature="_w_gnoPJvEeWopulrJJ2QVA"/>
+    <message xmi:type="uml:Message" xmi:id="_H9TPEPyiEeWgyMW-EunB0g" name="update_Message8" messageSort="reply" sendEvent="_H9UdMPyiEeWgyMW-EunB0g" signature="_w_gnoPJvEeWopulrJJ2QVA"/>
+    <message xmi:type="uml:Message" xmi:id="_LhMzoPyiEeWgyMW-EunB0g" name="update_Message9" messageSort="asynchCall" receiveEvent="_LhOo0PyiEeWgyMW-EunB0g" signature="_T_D6wPJwEeWopulrJJ2QVA"/>
+    <message xmi:type="uml:Message" xmi:id="_NPPp0PyiEeWgyMW-EunB0g" name="update_Message10" messageSort="reply" sendEvent="_NPQ38PyiEeWgyMW-EunB0g" signature="_T_D6wPJwEeWopulrJJ2QVA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Signal" xmi:id="_47MUQPpQEeWZ16JFCZ3NlQ" name="StrategyConstruct"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_4PiKEPr-EeWrYoVVOWxOug" name="ExchangeRateRepository">
@@ -1094,6 +1106,10 @@
   <packagedElement xmi:type="uml:Realization" xmi:id="_btnzUPr_EeWrYoVVOWxOug" client="_8IhRwPHSEeWtIMLDeYZRSA" supplier="_BViJMPHTEeWtIMLDeYZRSA"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_cPaRwPr_EeWrYoVVOWxOug" client="_YnNesPJ9EeWopulrJJ2QVA" supplier="_Q6xXcPJ9EeWopulrJJ2QVA"/>
   <packagedElement xmi:type="uml:Realization" xmi:id="_dx-QsPr_EeWrYoVVOWxOug" client="_C03xEPr_EeWrYoVVOWxOug" supplier="_AdpkoPpHEeWZ16JFCZ3NlQ"/>
+  <packagedElement xmi:type="uml:DataType" xmi:id="_442DUPyfEeWgyMW-EunB0g" name="DataForBankTransfer"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_5IarMPyxEeWgyMW-EunB0g" client="_2XIsgPHTEeWtIMLDeYZRSA" supplier="_BViJMPHTEeWtIMLDeYZRSA"/>
+  <packagedElement xmi:type="uml:Dependency" xmi:id="_6ChjAPyxEeWgyMW-EunB0g" client="_2XIsgPHTEeWtIMLDeYZRSA" supplier="_Q6xXcPJ9EeWopulrJJ2QVA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_jga9IPyzEeWgyMW-EunB0g" name="Class1"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_UrgmkPGrEeWtIMLDeYZRSA">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_UrkQ8PGrEeWtIMLDeYZRSA" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
